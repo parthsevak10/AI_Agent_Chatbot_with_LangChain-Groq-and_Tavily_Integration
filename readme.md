@@ -1,4 +1,6 @@
 Brief Explanation of the Code
+
+
 1. app.py (FastAPI Backend)
 Imports: The code imports necessary libraries such as FastAPI for web app development, Pydantic for structured data validation, and LangGraph, LangChain for working with AI models and agents.
 Environment Variables: The code sets API keys for external tools (e.g., Tavily API and Groq API) using environment variables.
@@ -10,6 +12,8 @@ Checks if the model_name is valid and then creates a chatbot agent using the sel
 Sends the message to the agent, which processes it and returns the response.
 The response is returned to the client (UI).
 Main Function: If the script is executed directly, the FastAPI app runs locally on port 8000 using Uvicorn.
+
+
 2. ui.py (Streamlit Frontend)
 Streamlit Configuration: The code sets up the Streamlit app with a custom page title and a centered layout.
 API URL: The Streamlit app is configured to communicate with the FastAPI backend at http://127.0.0.1:8000/chat.
@@ -23,6 +27,8 @@ Response Handling:
 The response from FastAPI (AI's response) is displayed on the frontend.
 If the API returns an error, it will be shown to the user.
 If the response contains the AI's output, it will be shown in the interface.
+
+
 In Summary:
 The FastAPI backend (app.py) serves as the core logic for interacting with an AI model via LangGraph and Groq API. It processes user input, interacts with the agent, and returns responses.
 The Streamlit frontend (ui.py) allows users to interact with the backend via a simple web interface, where they can provide a system prompt, select a model, and send messages to the chatbot. The responses are displayed in the UI.
